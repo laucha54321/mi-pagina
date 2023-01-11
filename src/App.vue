@@ -29,5 +29,13 @@ h2{
 body{
   background-color:#EEEEEE;
 }
+@media (max-width:700px){
+  h2{
+    text-align: center;
+  }
+  p{
+    text-align: center;
+  }
 
+}
 </style>

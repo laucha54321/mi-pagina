@@ -25,7 +25,7 @@
 }
 .year,.place{
     font-weight: lighter;
-    font-size: small;
+    font-size: normal;
 }
 @media (max-width:700px){
   .title-year{
