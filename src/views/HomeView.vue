@@ -1,107 +1,49 @@
 <template>
   <div class="home">
-    <header :class="classLoop">
-      <h1 :class="classLoop">{{ aux }}</h1>
-      <nav class="links-header">
-        <a href="https://github.com/laucha54321">GitHub</a>
-        <a href="">Pagina 2</a>
-        <a href="">Pagina 3</a>
-      </nav>
-    </header>
+    <the-header></the-header>
+    <div class="container">
+      <h2>Sobre Mí</h2>
+        <p> Nací el 25 de Julio de 2001. Viví en Venado Tuerto hasta los 18, cuando decidí que iba a continuar estudiando ingeniería en Sistemas de la información en la Universidad Tecnológica Nacional en Rosario.</p>
+        <p>Estoy buscando enfrentarme a nuevos desafíos y aprender nuevas tecnologías. Puedo resolver problemas complejos en una manera autónoma, aprovechando mi nivel de Ingles y mi habilidad para usar Google. </p>
+    </div>
+    <div class="container">
+      <h2>Educación</h2>
+      <title-year-place></title-year-place>
+      <title-year-place></title-year-place>
+      <title-year-place></title-year-place>
+    </div>
+    <div class="container">
+      <h2>Certificaciones</h2>
+      <h3>Programacion</h3>
+      <year-certification></year-certification>
+      <year-certification></year-certification>
+      <year-certification></year-certification>
+      <year-certification></year-certification>
+    </div>
   </div>
 </template>
-
 <script>
-
-export default {
-  data(){
-    return{
-      titulo:'Laureano Iván Oliva',
-      looping:true,
-      aux:''
-    }
-  },
-  mounted(){
-    this.animacionTitulo()
-  },
-  computed:{
-    classLoop(){
-      return this.looping ? 'looping' : 'nt'
-    }
-  },
-  methods:{
-    animacionTitulo(){
-      let titulo1 = '<h1>'+this.titulo+'</h1>'
-      let counter = 0
-      let bar = false
-      var interval = setInterval(()=>{
-        counter++
-        this.aux = titulo1.substring(0,counter) + '|'
-        if(counter > titulo1.length){
-          clearInterval(interval)
-          this.aux = this.titulo
-          this.looping = false
-        }
-      },150)
-    }
+import TheHeader from '../components/TheHeader.vue'
+import titleYearPlace from '../components/titleYearPlace.vue'
+import yearCertification from '../components/yearTitle.vue'
+export default{
+  components:{
+    TheHeader,
+    titleYearPlace,
+    yearCertification
   }
 }
 </script>
 <style scoped>
-*{
-  font-family: 'VT323', monospace;
+.home{
+  width: 100vw;
+  height: 100vh;
+  background: #EEEEEE;
 }
-header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #393E46;
-  color: #00ADB5;
-  height: 70px;
+p{
+  font-weight: light;
 }
-h1{
-  margin-left:25px;
-}
-.looping{
-  background-color: #393E46;
-  font-family: 'VT323', monospace;
-  font-weight: normal;
-  font-size: normal;
-}
-nav{
-  display: flex;
-  height: 100%;
-  justify-content: space-between;
-  margin-right: 25px;
-}
-a{
-  height: 100%;
-  display: inline-flex;
-  text-align: center;
-  color: #00ADB5;
-  font-weight: bold;
-  padding-right: 10px;
-  padding-left: 10px;
-  align-items: center;
-  font-size: large;
-}
-
-a:hover{
-  color:#EEEEEE;
-  background-color: #222831;
-}
-
-@media (max-width:700px){
-  header{
-    flex-direction: column;
-  }
-  nav{
-    padding: 10px 0px;
-    margin-right: 0;
-  }
-  h1{
-    margin-left: 0;
-  }
-
+title-year{
+  padding-top: 80px;
 }
 </style>
