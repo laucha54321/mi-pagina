@@ -8,9 +8,12 @@
     </div>
     <div class="container">
       <h2>Educación</h2>
-      <title-year-place></title-year-place>
-      <title-year-place></title-year-place>
-      <title-year-place></title-year-place>
+      <title-year-place v-for="el in educacion">
+        <template v-slot:title>{{el.title}}</template>
+        <template v-slot:year>{{ el.year }}</template>
+        <template v-slot:institution>{{ el.institution }}</template>
+        <template v-slot:place>{{ el.place }}</template>
+      </title-year-place>
     </div>
     <div class="container">
       <h2>Certificaciones</h2>
@@ -31,7 +34,26 @@ export default{
     TheHeader,
     titleYearPlace,
     yearCertification
+  },
+  data(){
+    return{
+      educacion:[
+        {
+          title:'Estudiante de Ingeniería en Sistemas de la Información',
+          year:'Mar. 2020 - Actualmente',
+          institution:'Universidad Tecnológica Nacional',
+          place:'Rosario, Santa Fe'
+        },
+        {
+          title:'Curso de inglés intensivo',
+          year:'Sep. 2018',
+          institution:'LSI Education',
+          place:'Cambridge, Inglaterra'
+        }
+      ]
+    }
   }
+  
 }
 </script>
 <style scoped>

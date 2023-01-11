@@ -1,12 +1,12 @@
 <template>
     <div class="title-year-container">
         <div class="title-year">
-            <p class="title">Estudiante de Ingeniería en Sistemas de la Información</p>
-            <p class="year">Mar. 2020 - Actualmente</p> 
+            <p class="title"><slot name="title"></slot></p>
+            <p class="year"><slot name="year"></slot></p> 
         </div>
         <div class="title-year">
-            <p>Universidad Tecnológica Nacional</p>
-            <p class="place">Rosario, Santa Fe</p>
+            <p class="institution"><slot name="institution"></slot></p>
+            <p class="place"><slot name="place"></slot></p>
         </div>
     </div>
 </template>
@@ -19,12 +19,9 @@
     align-items: center;
     justify-content: space-between;
 }
-.title-year p{
-    display: inline-block;
-}
 .title{
     font-weight: bold;
-    font-size: larger;
+    font-size: large;
 }
 .year,.place{
     font-weight: lighter;
