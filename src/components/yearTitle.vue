@@ -1,8 +1,10 @@
 <template>
-    <div class="year-title">
-        <p>2022</p>
-        <p class="main">JavaScript Algorithms and Data Structures</p>
-        <p>FreeCodeCamp</p>
+    <div>
+        <div class="year-title">
+            <p>2022</p>
+            <p class="main">JavaScript Algorithms and Data Structures</p>
+            <p>FreeCodeCamp</p>
+        </div>
     </div>
 </template>
 <style scoped>
@@ -13,7 +15,7 @@
 }
 .main{
     font-weight: bold;
-    padding-left: 40px;
+    padding-left: 70px;
     padding-right: 10px;
 }
 </style>

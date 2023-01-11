@@ -1,5 +1,7 @@
 <template>
-  <router-view/>
+  <body>
+    <router-view/>
+  </body>
 </template>
 
 <style>
@@ -15,7 +17,6 @@ https://colorhunt.co/palette/222831393e4600adb5eeeeee */
   list-style: none;
   text-decoration: none;
   font-family: 'Roboto Condensed', sans-serif;
-  font-weight: light;
 }
 h2{
   margin-top: 20px;
@@ -24,6 +25,9 @@ h2{
 }
 .container{
   margin: 10px;
+}
+body{
+  background-color:#EEEEEE;
 }
 
 </style>

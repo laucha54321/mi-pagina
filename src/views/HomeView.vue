@@ -35,11 +35,6 @@ export default{
 }
 </script>
 <style scoped>
-.home{
-  width: 100vw;
-  height: 100vh;
-  background: #EEEEEE;
-}
 p{
   font-weight: light;
 }

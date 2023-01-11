@@ -2,9 +2,9 @@
     <header :class="classLoop">
       <h1 :class="classLoop">{{ aux }}</h1>
       <nav class="links-header">
-        <a href="https://github.com/laucha54321">GitHub</a>
-        <a href="">Pagina 2</a>
-        <a href="">Pagina 3</a>
+        <a href="https://github.com/laucha54321" target="_blank">GitHub</a>
+        <a href="" target="_blank">Pagina 2</a>
+        <a href="" target="_blank">Pagina 3</a>
       </nav>
     </header>
 </template>
