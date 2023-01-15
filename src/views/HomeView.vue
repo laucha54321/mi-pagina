@@ -1,11 +1,11 @@
 <template>
   <div class="home">
     <the-header></the-header>
-    <!-- <div class="container">
+    <div class="container">
       <h2>Sobre Mí</h2>
         <p> Nací el 25 de Julio de 2001. Viví en Venado Tuerto hasta los 18, cuando decidí que iba a continuar estudiando ingeniería en Sistemas de la información en la Universidad Tecnológica Nacional en Rosario.</p>
         <p>Estoy buscando enfrentarme a nuevos desafíos y aprender nuevas tecnologías. Puedo resolver problemas complejos en una manera autónoma, aprovechando mi nivel de Ingles y mi habilidad para usar Google. </p>
-    </div> -->
+    </div>
     <div class="container">
       <h2>Educación</h2>
       <title-year-place v-for="el in educacion" v-motion-pop>
