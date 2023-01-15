@@ -22,6 +22,12 @@ h2{
   margin-top: 20px;
   color:#00ADB5;
   font-weight: normal;
+  text-align: center;
+  font-size: xx-large;
+}
+h3{
+  text-align: center;
+  padding-top: 10vh;
 }
 .container{
   margin: 10px;

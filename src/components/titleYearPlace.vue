@@ -13,6 +13,9 @@
 <style scoped>
 .title-year-container{
     margin-top: 15px;
+    padding-top: 10vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 .title-year{
     display: flex;

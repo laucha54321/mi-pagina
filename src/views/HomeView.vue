@@ -1,14 +1,14 @@
 <template>
   <div class="home">
     <the-header></the-header>
-    <div class="container">
+    <!-- <div class="container">
       <h2>Sobre Mí</h2>
         <p> Nací el 25 de Julio de 2001. Viví en Venado Tuerto hasta los 18, cuando decidí que iba a continuar estudiando ingeniería en Sistemas de la información en la Universidad Tecnológica Nacional en Rosario.</p>
         <p>Estoy buscando enfrentarme a nuevos desafíos y aprender nuevas tecnologías. Puedo resolver problemas complejos en una manera autónoma, aprovechando mi nivel de Ingles y mi habilidad para usar Google. </p>
-    </div>
+    </div> -->
     <div class="container">
       <h2>Educación</h2>
-      <title-year-place v-for="el in educacion">
+      <title-year-place v-for="el in educacion" v-motion-pop>
         <template v-slot:title>{{el.title}}</template>
         <template v-slot:year>{{ el.year }}</template>
         <template v-slot:institution>{{ el.institution }}</template>
@@ -18,13 +18,13 @@
     <div class="container">
       <h2>Certificaciones</h2>
       <h3>PROGRAMACIÓN</h3>
-      <year-certification v-for="el in certificacionP">
+      <year-certification v-for="el in certificacionP" :key="el.title" :links="el.links" v-motion-slide-visible-once-bottom>
         <template v-slot:title>{{el.title}}</template>
         <template v-slot:year>{{ el.year }}</template>
         <template v-slot:institution>{{ el.institution }}</template>
       </year-certification>
       <h3>INGLES</h3>
-      <year-certification v-for="el in certificacionI">
+      <year-certification v-for="el in certificacionI" v-motion-slide-visible-once-bottom>
         <template v-slot:title>{{el.title}}</template>
         <template v-slot:year>{{ el.year }}</template>
         <template v-slot:institution>{{ el.institution }}</template>
@@ -68,22 +68,26 @@ export default{
         {
           title:'Vue - The Complete Guide',
           year:'2023',
-          institution:'Udemy - Maximilian Schwarzmüller'
+          institution:'Udemy - Maximilian Schwarzmüller',
+          links:'https://drive.google.com/file/d/19pi8n_MnKNsQMWS5JT3ylJrfd5pJE0nu/view?usp=share_link'
         },
         {
           title:'JavaScript Algorithms and Data Structures',
           year:'2022',
-          institution:'FreeCodeCamp'
+          institution:'FreeCodeCamp',
+          links:'https://www.freecodecamp.org/certification/laucha54321/javascript-algorithms-and-data-structures'
         },
         {
           title:'#Sé Programar',
           year:'2022',
-          institution:'Cámara de la Industria Argentina del Software'
+          institution:'Cámara de la Industria Argentina del Software',
+          links:'https://seprogramar.inti.gob.ar/inti/certificates/verify/NCjcNl5ACW7_vL1c'
         },
         {
           title:'Programación de Video Juegos con Unity. Nivel Inicial',
           year:'2017',
-          institution:'UTN Buenos Aires'
+          institution:'UTN Buenos Aires',
+          links:'https://drive.google.com/file/d/1wjLkieeETYMmUbquk4vt2-YStg2ER_VW/view?usp=share_link'
         },
 
       ],
@@ -91,17 +95,20 @@ export default{
         {
           title:'Certificate in Advance English (CAE)',
           year:'2019',
-          institution:'Cambridge English'
+          institution:'Cambridge English',
+
         },
         {
           title:'First Certificate in English (FCE)',
           year:'2018',
-          institution:'Cambridge English'
+          institution:'Cambridge English',
+
         },
         {
           title:'Preliminary English Test (PET)',
           year:'2015',
-          institution:'Cambridge English'
+          institution:'Cambridge English',
+
         },
       ]
     }
@@ -110,16 +117,13 @@ export default{
 }
 </script>
 <style scoped>
-h2{
-  font-size: xx-large;
-}
-h3{
-  padding-top: 15px;
-}
 p{
   font-weight: light;
 }
-title-year{
-  padding-top: 80px;
+.break{
+  padding-top: 20vh;
+}
+.container{
+  padding-bottom: 30vh;
 }
 </style>
