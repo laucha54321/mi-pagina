@@ -27,18 +27,35 @@ li{
   padding-right: 5vw;
 }
 h2{
-  margin-top: 20px;
   color:#00ADB5;
   font-weight: normal;
   text-align: center;
   font-size: xx-large;
+  
+  padding-top: 5vh;
+  padding-bottom: 5vh;
 }
 h3{
   text-align: center;
-  padding-top: 10vh;
+  font-size: x-large;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+h4{
+  text-align: center;
+  font-size: larger;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+}
+p{
+  font-size:large;
+}
+li{
+  list-style:disc;
+  font-size: large;
 }
 .container{
-  margin: 10px;
+  padding: 1vh;
 }
 body{
   background-color:#EEEEEE;

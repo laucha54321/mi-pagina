@@ -18,16 +18,18 @@ través de un portal web.</li>
     padding-right: 5vw;
 }
 h3{
+    font-size: x-large;
     padding-top: 1vh;
     padding-bottom: 1vh;
 }
 h4{
     text-align: center;
-    
+    font-size: larger;
     padding-top: 3vh;
     padding-bottom: 3vh;
 }
 li{
     list-style:disc;
+    font-size: large;
 }
 </style>
