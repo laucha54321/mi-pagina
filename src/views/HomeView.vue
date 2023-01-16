@@ -18,13 +18,21 @@
     <div class="container">
       <h2>Certificaciones</h2>
       <h3>PROGRAMACIÓN</h3>
-      <year-certification v-for="el in certificacionP" :key="el.title" :links="el.links" v-motion-slide-visible-once-bottom>
+      <year-certification 
+      v-for="el in certificacionP" 
+      :key="el.title" 
+      :links="el.links" 
+      v-motion-slide-visible-once-bottom>
         <template v-slot:title>{{el.title}}</template>
         <template v-slot:year>{{ el.year }}</template>
         <template v-slot:institution>{{ el.institution }}</template>
       </year-certification>
       <h3>INGLES</h3>
-      <year-certification v-for="el in certificacionI" :key="el.title" :links="el.links" v-motion-slide-visible-once-bottom>
+      <year-certification 
+      v-for="el in certificacionI" 
+      :key="el.title" 
+      :links="el.links" 
+      v-motion-slide-visible-once-bottom>
         <template v-slot:title>{{el.title}}</template>
         <template v-slot:year>{{ el.year }}</template>
         <template v-slot:institution>{{ el.institution }}</template>
@@ -32,11 +40,28 @@
     </div>
     <div class="container">
       <h2>Experiencia Laboral</h2>
-      <title-sub-item v-motion-slide-visible-once-bottom></title-sub-item>
+      <title-sub-item  
+      v-for="el in experiencia" 
+      :key="el.title" 
+      :listItems="el.listItems" 
+      v-motion-slide-visible-once-bottom>
+        <template v-slot:title>{{ el.title }}</template>
+        <template v-slot:subtitle>{{ el.subtitle }}</template>
+        <template v-slot:year>{{ el.year }}</template>
+      </title-sub-item>
+    </div>
+    <div class="container">
+      <h2>Otras Habilidades</h2>
+      <list-items :listItems="lista"></list-items>
+    </div>
+    <div class="container">
+      <h2>Hobbies y pasatiempos</h2>
+      <list-items :list-Items="lista2"></list-items>
     </div>
   </div>
 </template>
 <script>
+import listItems from '../components/listItems.vue'
 import titleSubItem from '@/components/titleSubItem.vue'
 import TheHeader from '../components/TheHeader.vue'
 import titleYearPlace from '../components/titleYearPlace.vue'
@@ -46,7 +71,8 @@ export default{
     TheHeader,
     titleYearPlace,
     yearCertification,
-    titleSubItem
+    titleSubItem,
+    listItems
   },
   data(){
     return{
@@ -118,6 +144,43 @@ export default{
           links:'https://drive.google.com/file/d/1JhKDkrs2k0XSasJJYn87nSlu1xwxU9c6/view?usp=share_link'
 
         },
+      ],
+      experiencia:[
+        {
+          title:"Pasantía de Desarrollo Web",
+          subtitle:"Ayude a Ivonne Nirich una consultora que trabaja con productos de MicroFocus",
+          year:"Nov. 2020 - Dic. 2020",
+          listItems:[
+            "Implemente un Script-Server, una herramienta que te permite ejecutar scripts en servidores a través de un portal web.",
+            "Administración de Máquinas Virtuales.",
+            "Instalación de Sistemas Operativos Linux (CentOs y RedHat)."
+          ]
+        },
+        {
+          title:"Desarollador de Software",
+          subtitle:"Responsabilidad de cordinar equipos para el desarollo de ML",
+          year:"Nov. 2023 - Dic. 2024",
+          listItems:[
+            "Administrar equipos",
+            "Hacer Máquinas Virtuales.",
+            "Instalación de Sistemas Operativos Linux (CentOs y RedHat)."
+          ]
+        }
+      ],
+      lista:[
+        "Entiendo el paradigma de Programación Estructurada y Programación Orientada a objetos.",
+        "Alto nivel de comprensión lectora y escucha en inglés.",
+        "Entendimiento de comandos de terminal de los sistemas operativos de Linux y Windows.",
+        "Redacción de Documentos usando LATEX.",
+        "Desarollo de front end con Vue.js",
+        "Entendimiento de algoritmos simples y estructuras de datos."
+      ],
+      lista2:[
+        "Disfruto de jugar al ajedrez en la universidad.",
+        "Con mis amigos, por diversión intentamos hacer juegos con Unity y C#.",
+        "Además personalice una distribución de Linux con ayuda de la comunidad RICE (Race Inspired Cosmetic Enhancements)",
+        "Me gusta jugar videojuegos con amigos.",
+        "Me gusta leer en inglés. Pero igualmente mi autor preferido es Yukio Mishima que es Japones."
       ]
     }
   }

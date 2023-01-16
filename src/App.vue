@@ -38,8 +38,8 @@ h2{
 h3{
   text-align: center;
   font-size: x-large;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
 }
 h4{
   text-align: center;
