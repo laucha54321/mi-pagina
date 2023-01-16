@@ -6,7 +6,7 @@
             <p><slot name="year"></slot></p>
         </div>
         <ul>
-            <li v-for="el in listItems">{{ el }}</li>
+            <li v-for="el in listItems" >{{ el }}</li>
         </ul>
     </div>
 </template>
