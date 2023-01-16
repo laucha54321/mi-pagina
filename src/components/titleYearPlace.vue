@@ -12,8 +12,8 @@
 </template>
 <style scoped>
 .title-year-container{
-    margin-top: 15px;
-    padding-top: 10vh;
+    padding-top: 6vh;
+    padding-bottom: 6vh;
     padding-left: 5vw;
     padding-right: 5vw;
 }

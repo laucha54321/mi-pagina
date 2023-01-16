@@ -1,9 +1,9 @@
 <template>
     <div>
-        <div class="year-title">
+        <a :href="links" target="_blank" class="year-title">
             <p><slot name="year"></slot></p>
-            <a :href="links" target="_blank" class="main"><b><slot name="title"></slot></b>, <slot name="institution"></slot></a>
-        </div>
+            <div  class="main"><b><slot name="title"></slot></b>, <slot name="institution"></slot></div>
+        </a>
     </div>
 </template>
 <script>
@@ -19,8 +19,8 @@ export default{
     display: flex;
     font-size: large;
 
-    margin-top: 15px;
-    padding-top: 10vh;
+    padding-top: 6vh;
+    padding-bottom: 6vh;
     padding-left: 5vw;
     padding-right: 5vw;
 
@@ -28,6 +28,10 @@ export default{
 a{
     text-decoration: none;
     color: black;
+}
+a:hover{
+    background-color: #00ADB5;
+    color:#EEEEEE;
 }
 .main{
     font-weight: light;

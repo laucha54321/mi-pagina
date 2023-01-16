@@ -18,6 +18,14 @@ https://colorhunt.co/palette/222831393e4600adb5eeeeee */
   text-decoration: none;
   font-family: 'Roboto Condensed', sans-serif;
 }
+li{
+  list-style:disc;
+  font-weight: light;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
 h2{
   margin-top: 20px;
   color:#00ADB5;

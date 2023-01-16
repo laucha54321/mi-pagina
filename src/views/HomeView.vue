@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <the-header></the-header>
-    <div class="container">
+    <div class="container" v-motion-slide-bottom>
       <h2>Sobre Mí</h2>
         <p> Nací el 25 de Julio de 2001. Viví en Venado Tuerto hasta los 18, cuando decidí que iba a continuar estudiando ingeniería en Sistemas de la información en la Universidad Tecnológica Nacional en Rosario.</p>
         <p>Estoy buscando enfrentarme a nuevos desafíos y aprender nuevas tecnologías. Puedo resolver problemas complejos en una manera autónoma, aprovechando mi nivel de Ingles y mi habilidad para usar Google. </p>
@@ -24,15 +24,20 @@
         <template v-slot:institution>{{ el.institution }}</template>
       </year-certification>
       <h3>INGLES</h3>
-      <year-certification v-for="el in certificacionI" v-motion-slide-visible-once-bottom>
+      <year-certification v-for="el in certificacionI" :key="el.title" :links="el.links" v-motion-slide-visible-once-bottom>
         <template v-slot:title>{{el.title}}</template>
         <template v-slot:year>{{ el.year }}</template>
         <template v-slot:institution>{{ el.institution }}</template>
       </year-certification>
     </div>
+    <div class="container">
+      <h2>Experiencia Laboral</h2>
+      <title-sub-item v-motion-slide-visible-once-bottom></title-sub-item>
+    </div>
   </div>
 </template>
 <script>
+import titleSubItem from '@/components/titleSubItem.vue'
 import TheHeader from '../components/TheHeader.vue'
 import titleYearPlace from '../components/titleYearPlace.vue'
 import yearCertification from '../components/yearTitle.vue'
@@ -40,7 +45,8 @@ export default{
   components:{
     TheHeader,
     titleYearPlace,
-    yearCertification
+    yearCertification,
+    titleSubItem
   },
   data(){
     return{
@@ -96,18 +102,20 @@ export default{
           title:'Certificate in Advance English (CAE)',
           year:'2019',
           institution:'Cambridge English',
-
+          links:'https://drive.google.com/file/d/17sxpSLsklXX5iDnEAujHyta7vhIWB9sp/view?usp=share_link'
         },
         {
           title:'First Certificate in English (FCE)',
           year:'2018',
           institution:'Cambridge English',
+          links:'https://drive.google.com/file/d/1uP0Vllg9LM8zbeKM_ghnLoLI44dztHjl/view?usp=share_link'
 
         },
         {
           title:'Preliminary English Test (PET)',
           year:'2015',
           institution:'Cambridge English',
+          links:'https://drive.google.com/file/d/1JhKDkrs2k0XSasJJYn87nSlu1xwxU9c6/view?usp=share_link'
 
         },
       ]
@@ -119,11 +127,18 @@ export default{
 <style scoped>
 p{
   font-weight: light;
+  padding-top: 6vh;
+  padding-bottom: 6vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 .break{
   padding-top: 20vh;
 }
 .container{
-  padding-bottom: 30vh;
+  padding-top: 6vh;
+  padding-bottom: 6vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 </style>
