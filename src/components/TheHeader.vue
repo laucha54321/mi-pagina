@@ -1,19 +1,24 @@
 <template>
     <header :class="classLoop">
       <h1 :class="classLoop">{{ aux }}</h1>
-      <nav class="links-header">
-        <div class="menu">
-          <a href="https://github.com/laucha54321" target="_blank">GitHub</a>
-          <a href="" target="_blank">Pagina 2</a>
-          <a href="" target="_blank">Pagina 3</a>
-        </div>
-        <button class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+      <nav class="menu">
+        <a href="https://github.com/laucha54321" target="_blank">GitHub</a>
+        <a href="" target="_blank">Pagina 2</a>
+        <a href="" target="_blank">Pagina 3</a>
       </nav>
+        <button :class="['hamburger',menu ? 'active' : '_']" @click="clickHamburguer" >
+          <div class="bar">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
     </header>
+    <nav :class="['mobile-nav',menu ? 'active': null]" >
+      <a href="https://github.com/laucha54321" target="_blank">GitHub</a>
+      <a href="" target="_blank">Pagina 2</a>
+      <a href="" target="_blank">Pagina 3</a>
+    </nav>
 </template>
 <script>
 
@@ -22,7 +27,8 @@ export default {
     return{
       titulo:'Laureano Iván Oliva',
       looping:true,
-      aux:''
+      aux:'',
+      menu:false
     }
   },
   mounted(){
@@ -47,6 +53,10 @@ export default {
           this.looping = false
         }
       },150)
+    },
+    clickHamburguer(){
+      this.menu = !this.menu
+      console.log(this.menu)
     }
   }
 }
@@ -74,9 +84,8 @@ nav{
   margin-right: 25px;
 }
 a{
-  height: 100%;
   text-align: center;
-  color: #00ADB5;
+  color: #EEEEEE;
   font-weight: bold;
   padding-right: 10px;
   padding-left: 10px;
@@ -85,14 +94,63 @@ a{
 }
 
 a:hover{
-  color:#EEEEEE;
+  color:#00ADB5;
   background-color: #222831;
 }
 
 .hamburger{
+  display: none;
+}
+.mobile-nav{
+  display:none;
+}
+
+@media (max-width:768px){
+
+  header{
+    padding-left: 3vw;
+    padding-right: 2vw;
+    padding-top: 1vh;
+    padding-bottom:1vh;
+  }
+  h1{
+    margin-left: 0;
+    z-index: 99;
+  }
+
+  .menu{
+    display: none;
+    z-index: 99;
+  }
+  .mobile-nav{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 98;
+    background-color: #393E46;
+    padding-top: 70px;
+    transition: 0.4s;
+  }
+  .mobile-nav.active{
+    left: 0;
+  }
+
+  a{
+    display: block;
+    text-align: center;
+    padding: 12px 16px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    background-color: #222831;
+  }
+  
+.hamburger{
   display: block;
   position: relative;
-  z-index: 1;
+  z-index: 99;
 
   user-select: none;
 
@@ -121,33 +179,18 @@ a:hover{
   transform: translate(10px);
   background-color: #00ADB5;
 }
-.hamburger:active span:nth-child(1){
+.hamburger.active span:nth-child(1){
   transform: translate(0, -2px) rotate(45deg);
 }
-.hamburger:active span:nth-child(3){
+.hamburger.active span:nth-child(3){
   transform: translate(-3px, 3px) rotate(-45deg);
 }
-.hamburger:active span:nth-child(2){
+.hamburger.active span:nth-child(2){
   opacity: 0;
 }
 
-.hamburger:active:hover span{
+.hamburger.active:hover span{
   background-color: #00ADB5;
 }
-
-@media (max-width:700px){
-
-  header{
-    padding-left: 3vw;
-    padding-right: 2vw;
-    padding-top: 1vh;
-    padding-bottom:1vh;
-  }
-  h1{
-    margin-left: 0;
-  }
-  .menu{
-    display: none;
-  }
 
 }</style>
