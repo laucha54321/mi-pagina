@@ -2,9 +2,16 @@
     <header :class="classLoop">
       <h1 :class="classLoop">{{ aux }}</h1>
       <nav class="links-header">
-        <a href="https://github.com/laucha54321" target="_blank">GitHub</a>
-        <a href="" target="_blank">Pagina 2</a>
-        <a href="" target="_blank">Pagina 3</a>
+        <div class="menu">
+          <a href="https://github.com/laucha54321" target="_blank">GitHub</a>
+          <a href="" target="_blank">Pagina 2</a>
+          <a href="" target="_blank">Pagina 3</a>
+        </div>
+        <button class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </nav>
     </header>
 </template>
@@ -50,8 +57,9 @@ header{
   justify-content: space-between;
   align-items: center;
   background-color: #393E46;
-  color: #00ADB5;
+  color: #EEEEEE;
   min-height: 70px;
+  z-index: 99;
 }
 h1{
   margin-left:25px;
@@ -81,16 +89,65 @@ a:hover{
   background-color: #222831;
 }
 
+.hamburger{
+  display: block;
+  position: relative;
+  z-index: 1;
+
+  user-select: none;
+
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor:pointer;
+}
+.hamburger span{
+  display:block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position:relative;
+
+  background-color: #EEEEEE;
+  border-radius: 6px;
+  z-index: 1;
+  transform-origin: 0 0;
+  
+  transition: 0.4s;
+
+}
+.hamburger:hover span:nth-child(2){
+  transform: translate(10px);
+  background-color: #00ADB5;
+}
+.hamburger:active span:nth-child(1){
+  transform: translate(0, -2px) rotate(45deg);
+}
+.hamburger:active span:nth-child(3){
+  transform: translate(-3px, 3px) rotate(-45deg);
+}
+.hamburger:active span:nth-child(2){
+  opacity: 0;
+}
+
+.hamburger:active:hover span{
+  background-color: #00ADB5;
+}
+
 @media (max-width:700px){
+
   header{
-    flex-direction: column;
-  }
-  nav{
-    padding: 10px 0px;
-    margin-right: 0;
+    padding-left: 3vw;
+    padding-right: 2vw;
+    padding-top: 1vh;
+    padding-bottom:1vh;
   }
   h1{
     margin-left: 0;
+  }
+  .menu{
+    display: none;
   }
 
 }</style>
