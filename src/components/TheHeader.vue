@@ -15,8 +15,8 @@
         </button>
     </header>
     <nav :class="['mobile-nav',menu ? 'active': null]" >
+      <router-link to="/AboutMe">Sobre Mi</router-link>
       <a href="https://github.com/laucha54321" target="_blank">GitHub</a>
-      <a href="" target="_blank">Pagina 2</a>
       <a href="" target="_blank">Pagina 3</a>
     </nav>
 </template>
