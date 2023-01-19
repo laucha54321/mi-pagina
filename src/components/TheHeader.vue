@@ -1,9 +1,10 @@
 <template>
-    <header :class="classLoop">
-      <h1 :class="classLoop">{{ aux }}</h1>
+  <div class="the-header">
+    <header>
+      <h1>Laureano Iván Oliva</h1>
       <nav class="menu">
+        <router-link to="/AboutMe">Sobre Mí</router-link>
         <a href="https://github.com/laucha54321" target="_blank">GitHub</a>
-        <a href="" target="_blank">Pagina 2</a>
         <a href="" target="_blank">Pagina 3</a>
       </nav>
         <button :class="['hamburger',menu ? 'active' : '_']" @click="clickHamburguer" >
@@ -15,45 +16,21 @@
         </button>
     </header>
     <nav :class="['mobile-nav',menu ? 'active': null]" >
-      <router-link to="/AboutMe">Sobre Mi</router-link>
+      <router-link to="/AboutMe">Sobre Mí</router-link>
       <a href="https://github.com/laucha54321" target="_blank">GitHub</a>
       <a href="" target="_blank">Pagina 3</a>
     </nav>
+  </div>
 </template>
 <script>
 
 export default {
   data(){
     return{
-      titulo:'Laureano Iván Oliva',
-      looping:true,
-      aux:'',
       menu:false
     }
   },
-  mounted(){
-    this.animacionTitulo()
-  },
-  computed:{
-    classLoop(){
-      return this.looping ? 'looping' : 'nt'
-    }
-  },
   methods:{
-    animacionTitulo(){
-      let titulo1 = '<h1>'+this.titulo+'</h1>'
-      let counter = 0
-      let bar = false
-      var interval = setInterval(()=>{
-        counter++
-        this.aux = titulo1.substring(0,counter) + '|'
-        if(counter > titulo1.length){
-          clearInterval(interval)
-          this.aux = this.titulo
-          this.looping = false
-        }
-      },150)
-    },
     clickHamburguer(){
       this.menu = !this.menu
       console.log(this.menu)
@@ -62,7 +39,13 @@ export default {
 }
 </script>
 <style scoped>
+.the-header{
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
 header{
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;

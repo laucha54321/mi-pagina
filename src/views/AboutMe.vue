@@ -1,6 +1,6 @@
 <template>
   <the-header></the-header>
-  <div class="home">
+  <div class="main">
     <div class="container" v-motion-slide-bottom>
       <h2>Sobre Mí</h2>
         <p> Nací el 25 de Julio de 2001. Viví en Venado Tuerto hasta los 18, cuando decidí que iba a continuar estudiando ingeniería en Sistemas de la información en la Universidad Tecnológica Nacional en Rosario.</p>
@@ -179,6 +179,9 @@ export default{
 }
 </script>
 <style scoped>
+.main{
+  padding-top: 70px;
+}
 p{
   font-weight: light;
   padding-top: 6vh;
