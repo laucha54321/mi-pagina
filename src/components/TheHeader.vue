@@ -39,26 +39,22 @@ export default {
 }
 </script>
 <style scoped>
-.the-header{
-  position: fixed;
-  width: 100%;
-  z-index: 99;
-}
 header{
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #393E46;
-  color: #EEEEEE;
+  background-color: var(--dark);
+  color: var(--light);
   min-height: 70px;
+  max-height: 110px;
   z-index: 99;
 }
 h1{
   margin-left:25px;
 }
 .looping{
-  background-color: #393E46;
+  background-color: var(--dark);
 }
 nav{
   display: flex;
@@ -68,7 +64,7 @@ nav{
 }
 a{
   text-align: center;
-  color: #EEEEEE;
+  color: var(--light);
   font-weight: bold;
   padding-right: 10px;
   padding-left: 10px;
@@ -77,8 +73,8 @@ a{
 }
 
 a:hover{
-  color:#00ADB5;
-  background-color: #222831;
+  color: var(--accent);
+  background-color: var(--darkest);
 }
 
 .hamburger{
@@ -113,8 +109,8 @@ a:hover{
     width: 100%;
     min-height: 100vh;
     z-index: 98;
-    background-color: #393E46;
-    padding-top: 70px;
+    background-color: var(--dark);
+    padding-top: 110px;
     transition: 0.4s;
   }
   .mobile-nav.active{
@@ -127,7 +123,7 @@ a:hover{
     padding: 12px 16px;
     margin-top: 6px;
     margin-bottom: 6px;
-    background-color: #222831;
+    background-color: var(--darkest);
   }
   
 .hamburger{
@@ -150,7 +146,7 @@ a:hover{
   margin-bottom: 5px;
   position:relative;
 
-  background-color: #EEEEEE;
+  background-color: var(--light);
   border-radius: 6px;
   z-index: 1;
   transform-origin: 0 0;
@@ -160,7 +156,7 @@ a:hover{
 }
 .hamburger:hover span:nth-child(2){
   transform: translate(10px);
-  background-color: #00ADB5;
+  background-color: var(--accent);
 }
 .hamburger.active span:nth-child(1){
   transform: translate(0, -2px) rotate(45deg);
@@ -173,7 +169,7 @@ a:hover{
 }
 
 .hamburger.active:hover span{
-  background-color: #00ADB5;
+  background-color: var(--accent);
 }
 
 }</style>

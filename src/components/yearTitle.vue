@@ -30,8 +30,8 @@ a{
     color: black;
 }
 a:hover{
-    background-color: #00ADB5;
-    color:#EEEEEE;
+    background-color: var(--accent);
+    color:var(--light);
 }
 .main{
     font-weight: light;

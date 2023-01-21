@@ -11,7 +11,12 @@
 
 /* paleta de color:
 https://colorhunt.co/palette/222831393e4600adb5eeeeee */
-
+:root{
+  --darkest:#222831;
+  --dark:#393E46;
+  --light:#EEEEEE;
+  --accent:#00ADB5;
+}
 *{
   margin:0;
   padding: 0;
@@ -27,27 +32,6 @@ li{
   padding-left: 5vw;
   padding-right: 5vw;
 }
-h2{
-  color:#00ADB5;
-  font-weight: normal;
-  text-align: center;
-  font-size: xx-large;
-  
-  padding-top: 5vh;
-  padding-bottom: 5vh;
-}
-h3{
-  text-align: center;
-  font-size: x-large;
-  padding-top: 5vh;
-  padding-bottom: 5vh;
-}
-h4{
-  text-align: center;
-  font-size: larger;
-  padding-top: 3vh;
-  padding-bottom: 3vh;
-}
 p{
   font-size:large;
 }
@@ -59,12 +43,15 @@ li{
   padding: 1vh;
 }
 body{
-  background-color:#EEEEEE;
+  background-color:var(--light);
+}
+.container{
+  padding-top: 6vh;
+  padding-bottom: 6vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 @media (max-width:700px){
-  h2{
-    text-align: center;
-  }
   p{
     text-align: center;
   }

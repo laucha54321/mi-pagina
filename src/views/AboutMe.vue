@@ -179,9 +179,6 @@ export default{
 }
 </script>
 <style scoped>
-.main{
-  padding-top: 70px;
-}
 p{
   font-weight: light;
   padding-top: 6vh;
@@ -189,13 +186,28 @@ p{
   padding-left: 5vw;
   padding-right: 5vw;
 }
+h2{
+  color:var(--accent);
+  font-weight: normal;
+  text-align: center;
+  font-size: xx-large;
+  
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+h3{
+  text-align: center;
+  font-size: x-large;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+h4{
+  text-align: center;
+  font-size: larger;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+}
 .break{
   padding-top: 20vh;
-}
-.container{
-  padding-top: 6vh;
-  padding-bottom: 6vh;
-  padding-left: 5vw;
-  padding-right: 5vw;
 }
 </style>
