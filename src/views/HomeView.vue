@@ -45,6 +45,9 @@ export default{
 }
 </script>
 <style scoped>
+body{
+  background-color: var(--darkest);
+}
 .hi-text{
   padding: 10%;
 }

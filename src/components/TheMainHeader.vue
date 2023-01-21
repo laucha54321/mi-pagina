@@ -48,8 +48,6 @@ nav{
 a{
   text-align: center;
   color: var(--light);
-  padding-right: 10px;
-  padding-left: 10px;
   font-size: x-large;
   font-weight: normal;
 }
