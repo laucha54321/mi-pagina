@@ -39,18 +39,10 @@ li{
   list-style:disc;
   font-size: large;
 }
-.container{
-  padding: 1vh;
-}
 body{
   background-color:var(--light);
 }
-.container{
-  padding-top: 6vh;
-  padding-bottom: 6vh;
-  padding-left: 5vw;
-  padding-right: 5vw;
-}
+
 @media (max-width:700px){
   p{
     text-align: center;
